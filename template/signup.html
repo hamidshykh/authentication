@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block 'content' %}
+
+
+<!-- Sign up form -->
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="login-wrap p-4 p-md-5">
+                    <h3 class="mb-4">Sign Up</h3>
+                    <form action="/signup/" method="post" class="signup-form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="label" for="fname">First Name</label>
+                            <input type="text" class="form-control" placeholder="John" name="fname">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="fname">Last Name</label>
+                            <input type="text" class="form-control" placeholder="Doe" name="lname">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="email">Email Address</label>
+                            <input type="text" class="form-control" placeholder="example@gmail.com" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="cnumber">Contact Number</label>
+                            <input type="number" class="form-control" placeholder="+923163000000" name="cnumber">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="password">Password</label>
+                            <input id="password-field" type="password" class="form-control" placeholder="Password" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="cpassword">Confirm Password</label>
+                            <input id="password-field" type="password" class="form-control"
+                                placeholder="Confirm Password" name="cpassword">
+                        </div>
+                        <div class="form-group d-flex justify-content-end mt-5">
+                            <button type="submit" class="btn btn-primary submit"><span
+                                    class="fa fa-paper-plane"></span></button>
+                        </div>
+                    </form>
+                    
+                    <p class="text-center" >Already have an account? <a href="/login">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}
